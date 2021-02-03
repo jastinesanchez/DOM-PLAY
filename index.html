@@ -1,1 +1,79 @@
-<h1> DOM Play assignment goes here </h1>
+<html>
+<body>
+<head>
+    <title>DOM Play</title>
+    <style>
+        /*
+        #clickSpans span{
+            background-color:aquamarine;
+        }
+        */
+    </style>
+</head>
+</body>
+    <h1>DOM Play</h1>
+    <div id="clickSpans">
+        
+        <p><span data-actor="Keigo">Keigo: To be or not to be, that is the question?</span></p>
+        <p><span data-actor="Kotone">Kotone: Text goes here, sir, u w u</span></p>
+        <p><span data-actor="Keigo">Text goes here, sir, u w u</span></p>
+        <p><span data-actor="Kotone">Text goes here, sir, u w u</span></p>
+        <p><span data-actor="Keigo">Text goes here, sir, u w u</span></p>
+        <p><span data-actor="Kotone">Text goes here, sir, u w u</span></p>
+    </div> 
+
+    <script>
+
+        const spans = document.querySelectorAll("#clickSpans span");
+
+        //console.log(spans);
+
+        for(const mySpan of spans){
+
+            mySpan.addEventListener("click",function(event){
+
+                
+                highlightActor(mySpan.dataset.actor);
+
+            
+
+
+
+            });
+
+        }
+
+
+
+
+        
+        
+
+        
+        function highlightActor(myActor){
+
+            alert("Hewo, you playing the role: " + myActor);
+            
+
+            for(const mySpan of spans){
+
+                if(mySpan.dataset.actor == myActor){//current actor
+                    mySpan.style.backgroundColor = 'pink';
+                    mySpan.style.fontWeight = 'bold';
+                }else{//not pink, so turn to yellow
+                mySpan.style.backgroundColor = 'white';
+
+                }
+            
+            }
+
+
+        }
+
+        
+
+        //alert("hello");
+        //document.getElementById("target").style.backgroundColor = "yellow";
+    </script>
+
+</html>
